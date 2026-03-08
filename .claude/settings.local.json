@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.loveisthewayzah.com)",
+      "WebFetch(domain:ronenj.com)",
+      "Bash(node --version)",
+      "Bash(npx --version)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where npx)",
+      "Bash(where node)",
+      "Bash(where serve)",
+      "Bash(curl -s http://localhost:3456)",
+      "Bash(netstat -ano)",
+      "Bash(findstr \":3456\")",
+      "Bash(taskkill /PID 3996 /F)",
+      "Bash(cmd /c \"taskkill /PID 3996 /F\")",
+      "Bash(cmd /c \"netstat -ano | findstr :3456\")",
+      "Bash(python3 -c \"import urllib.parse; text=''שלום, אני מעוניין/ת בפרטים על טיפול. אשמח אם נוכל לתאם זמן קצר לשיחה ראשונית. תודה.''; print\\(urllib.parse.quote\\(text, safe=''''\\)\\)\")",
+      "Bash(python -c \"import urllib.parse; text=u''\\\\u05e9\\\\u05dc\\\\u05d5\\\\u05dd, \\\\u05d0\\\\u05e0\\\\u05d9 \\\\u05de\\\\u05e2\\\\u05d5\\\\u05e0\\\\u05d9\\\\u05d9\\\\u05df/\\\\u05ea \\\\u05d1\\\\u05e4\\\\u05e8\\\\u05d8\\\\u05d9\\\\u05dd \\\\u05e2\\\\u05dc \\\\u05d8\\\\u05d9\\\\u05e4\\\\u05d5\\\\u05dc. \\\\u05d0\\\\u05e9\\\\u05de\\\\u05d7 \\\\u05d0\\\\u05dd \\\\u05e0\\\\u05d5\\\\u05db\\\\u05dc \\\\u05dc\\\\u05ea\\\\u05d0\\\\u05dd \\\\u05d6\\\\u05de\\\\u05df \\\\u05e7\\\\u05e6\\\\u05e8 \\\\u05dc\\\\u05e9\\\\u05d9\\\\u05d7\\\\u05d4 \\\\u05e8\\\\u05d0\\\\u05e9\\\\u05d5\\\\u05e0\\\\u05d9\\\\u05ea. \\\\u05ea\\\\u05d5\\\\u05d3\\\\u05d4.''; print\\(urllib.parse.quote\\(text, safe=''''\\)\\)\")",
+      "Bash(where python3)",
+      "Bash(where python)",
+      "Bash(where py)",
+      "Bash(python3.exe -c \"print\\(''hello''\\)\")",
+      "Bash(node -e \"const text=''שלום, אני מעוניין/ת בפרטים על טיפול. אשמח אם נוכל לתאם זמן קצר לשיחה ראשונית. תודה.''; console.log\\(encodeURIComponent\\(text\\)\\)\")",
+      "Bash(node -e \":*)",
+      "Bash(npm install -g vercel)",
+      "Bash(vercel --version)",
+      "Bash(vercel whoami)"
+    ]
+  }
+}
