@@ -10,6 +10,11 @@ export default function LeadMagnet() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const msg = `שלום, אני מעוניין/ת לקבל את המדריך "שלום פנימי". כתובת האימייל שלי: ${email}`;
+    window.open(
+      `https://wa.me/972509591974?text=${encodeURIComponent(msg)}`,
+      "_blank"
+    );
     setDone(true);
   };
 
