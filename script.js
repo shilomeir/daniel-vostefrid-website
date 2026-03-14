@@ -162,6 +162,7 @@
   ════════════════════════════════════════════════ */
   const leadForm = document.getElementById('leadMagnetForm');
   const leadSuccess = document.getElementById('leadMagnetSuccess');
+  const leadHint = document.getElementById('leadMagnetHint');
 
   if (leadForm && leadSuccess) {
     leadForm.addEventListener('submit', function (e) {
@@ -170,6 +171,7 @@
       const msg = 'שלום, אני מעוניין/ת לקבל את המדריך "שלום פנימי". כתובת האימייל שלי: ' + email;
       window.open('https://wa.me/972509591974?text=' + encodeURIComponent(msg), '_blank');
       leadForm.hidden = true;
+      if (leadHint) leadHint.hidden = true;
       leadSuccess.hidden = false;
     });
   }
