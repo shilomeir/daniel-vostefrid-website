@@ -157,4 +157,42 @@
   }
   window.addEventListener('scroll', updateActiveNav, { passive: true });
 
+  /* ════════════════════════════════════════════════
+     7. LEAD MAGNET FORM
+  ════════════════════════════════════════════════ */
+  const leadForm = document.getElementById('leadMagnetForm');
+  const leadSuccess = document.getElementById('leadMagnetSuccess');
+
+  if (leadForm && leadSuccess) {
+    leadForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = document.getElementById('leadEmail').value.trim();
+      const msg = 'שלום, אני מעוניין/ת לקבל את המדריך "שלום פנימי". כתובת האימייל שלי: ' + email;
+      window.open('https://wa.me/972509591974?text=' + encodeURIComponent(msg), '_blank');
+      leadForm.hidden = true;
+      leadSuccess.hidden = false;
+    });
+  }
+
+  /* ════════════════════════════════════════════════
+     8. CONTACT FORM
+  ════════════════════════════════════════════════ */
+  const contactForm = document.getElementById('contactForm');
+  const contactSuccess = document.getElementById('contactFormSuccess');
+
+  if (contactForm && contactSuccess) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name  = document.getElementById('contactName').value.trim();
+      const phone = document.getElementById('contactPhone').value.trim();
+      const areaEl = document.getElementById('contactArea');
+      const areaMap = { personal: 'טיפול אישי', soldier: 'חייל/מילואימניק', workshop: 'סדנה קבוצתית' };
+      const areaLabel = areaMap[areaEl.value] || 'כללי';
+      const msg = 'שלום, שמי ' + name + '. מספר טלפון: ' + phone + '. תחום עניין: ' + areaLabel + '.';
+      window.open('https://wa.me/972509591974?text=' + encodeURIComponent(msg), '_blank');
+      contactForm.hidden = true;
+      contactSuccess.hidden = false;
+    });
+  }
+
 })();
