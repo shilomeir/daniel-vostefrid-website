@@ -1523,6 +1523,13 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
   font-size: 0.95rem;
 }
 
+.lead-magnet__hint {
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  margin-top: 14px;
+  text-align: center;
+}
+
 .lead-magnet__success {
   display: flex;
   flex-direction: column;
