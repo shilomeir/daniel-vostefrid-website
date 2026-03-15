@@ -289,11 +289,16 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
   transition: opacity var(--dur-slow) var(--ease),
               transform var(--dur-slow) var(--ease);
 }
+[data-delay="80"]  { transition-delay: 0.08s; }
+[data-delay="100"] { transition-delay: 0.10s; }
 [data-delay="120"] { transition-delay: 0.12s; }
 [data-delay="150"] { transition-delay: 0.15s; }
+[data-delay="160"] { transition-delay: 0.16s; }
 [data-delay="200"] { transition-delay: 0.20s; }
 [data-delay="240"] { transition-delay: 0.24s; }
+[data-delay="320"] { transition-delay: 0.32s; }
 [data-delay="360"] { transition-delay: 0.36s; }
+[data-delay="400"] { transition-delay: 0.40s; }
 [data-animate].is-visible {
   opacity: 1;
   transform: translateY(0);
@@ -358,30 +363,27 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
 .hero__badge-sep { opacity: 0.4; }
 
 .hero__name {
-  font-family: 'Frank Ruhl Libre', serif;
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--blue-mid);
-  letter-spacing: 0.04em;
-  margin-bottom: 14px;
-  margin-top: 4px;
-}
-
-.hero__title {
-  color: var(--blue-deep);
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-.hero__title-accent {
-  display: block;
-  font-style: italic;
-  color: var(--blue-mid);
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
   font-weight: 900;
+  color: var(--blue-deep);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 14px;
 }
 
 .hero__sub {
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
-  color: var(--text-mid);
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  color: var(--blue-mid);
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.hero__tagline {
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  color: var(--text-light);
+  font-style: italic;
   margin-bottom: 36px;
   line-height: 1.7;
 }
@@ -685,6 +687,29 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
   color: var(--text-mid);
 }
 
+/* Collapse: hide descriptions by default */
+.toolbox-card__detail {
+  display: none;
+  font-size: 0.93rem;
+  line-height: 1.75;
+  margin-top: 8px;
+}
+.toolbox--expanded .toolbox-card__detail {
+  display: block;
+}
+
+.toolbox__toggle-wrap {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.toolbox__toggle-btn {
+  min-width: 200px;
+  transition: transform var(--dur) var(--ease-spring),
+              box-shadow var(--dur) var(--ease),
+              background var(--dur-fast) var(--ease);
+}
+
 .toolbox__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -729,6 +754,15 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
 /* ════════════════════════════════════════════════════
    CTA STRIP
 ════════════════════════════════════════════════════ */
+
+/* Hidden by default — revealed when toolbox expands */
+#ctaStrip {
+  display: none;
+}
+#ctaStrip.is-visible {
+  display: block;
+}
+
 .cta-strip {
   padding: 60px 0;
 }
@@ -825,19 +859,22 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
 }
 
 .soldiers__symptoms {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.13);
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  border-top: 3px solid var(--blue-light);
   border-radius: var(--r-xl);
   padding: 36px 32px;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
 }
 
 .soldiers__symptoms-title {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: var(--white);
-  margin-bottom: 20px;
-  font-weight: 400;
+  margin-bottom: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .soldiers__symptoms-list {
@@ -942,15 +979,22 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
 }
 
 .soldiers__workshop-free {
-  background: linear-gradient(135deg, rgba(91,175,208,0.12), rgba(23,54,107,0.08));
+  background: linear-gradient(135deg, rgba(91,175,208,0.15), rgba(23,54,107,0.1));
   color: var(--blue-deep);
-  font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.93rem;
   text-align: center;
-  padding: 14px 28px;
+  padding: 16px 28px;
   margin: 0 28px 24px;
   border-radius: var(--r-md);
-  border: 1px dashed var(--blue-light);
+  border: 1.5px dashed var(--blue-light);
+  line-height: 1.6;
+}
+.soldiers__workshop-free strong {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--blue-deep);
+  margin-bottom: 4px;
 }
 
 .soldiers__workshop-actions {
@@ -1026,6 +1070,9 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
 .service-card p {
   flex: 1;
   margin-bottom: 24px;
+}
+.service-card h3 {
+  margin-bottom: 20px;
 }
 .service-card__cta {
   font-size: 0.93rem;
@@ -1215,9 +1262,33 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
   margin-bottom: 56px;
 }
 .contact__lead {
-  color: rgba(255,255,255,0.65);
-  font-size: 1.05rem;
+  color: rgba(255,255,255,0.75);
+  font-size: 1.1rem;
   margin-top: 4px;
+  line-height: 1.7;
+}
+
+.contact__trust {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.contact__trust span {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  font-weight: 600;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 6px 16px;
+  border-radius: var(--r-full);
+}
+
+.contact__wa-cta {
+  width: 100%;
+  justify-content: center;
+  margin-top: 8px;
 }
 
 .contact__cards {
@@ -1524,25 +1595,29 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
 }
 
 .lead-magnet__hint {
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   color: var(--text-mid);
   margin-top: 14px;
   text-align: center;
+  line-height: 1.6;
 }
 
 .lead-magnet__success {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 20px;
+  gap: 8px;
+  padding: 16px 20px;
   background: var(--cream);
   border-radius: var(--r-lg);
   color: var(--text-dark);
+  font-size: 0.92rem;
+  text-align: center;
+  line-height: 1.6;
 }
 
 .lead-magnet__success-icon {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 
