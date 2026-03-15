@@ -158,38 +158,19 @@
   window.addEventListener('scroll', updateActiveNav, { passive: true });
 
   /* ════════════════════════════════════════════════
-     7. TOOLBOX TOGGLE
-  ════════════════════════════════════════════════ */
-  const toolboxToggle = document.getElementById('toolboxToggle');
-  const toolboxSection = document.getElementById('toolbox');
-  const ctaStrip = document.getElementById('ctaStrip');
-
-  if (toolboxToggle && toolboxSection) {
-    toolboxToggle.addEventListener('click', () => {
-      const isExpanded = toolboxSection.classList.toggle('toolbox--expanded');
-      toolboxToggle.textContent = isExpanded ? 'הסתר פרטים ↑' : 'לפרטים נוספים ↓';
-      if (ctaStrip) {
-        ctaStrip.classList.toggle('is-visible', isExpanded);
-      }
-    });
-  }
-
-  /* ════════════════════════════════════════════════
-     8. LEAD MAGNET FORM
+     7. LEAD MAGNET FORM
   ════════════════════════════════════════════════ */
   const leadForm = document.getElementById('leadMagnetForm');
-  const leadSuccess = document.getElementById('leadMagnetSuccess');
-  const leadHint = document.getElementById('leadMagnetHint');
+  const leadStatus = document.getElementById('leadMagnetStatus');
 
-  if (leadForm && leadSuccess) {
+  if (leadForm && leadStatus) {
     leadForm.addEventListener('submit', function (e) {
       e.preventDefault();
       const email = document.getElementById('leadEmail').value.trim();
       const msg = 'שלום, אני מעוניין/ת לקבל את המדריך "שלום פנימי". כתובת האימייל שלי: ' + email;
       window.open('https://wa.me/972509591974?text=' + encodeURIComponent(msg), '_blank');
       leadForm.hidden = true;
-      if (leadHint) leadHint.hidden = true;
-      leadSuccess.hidden = false;
+      leadStatus.textContent = '🎉 תודה! המדריך בדרך אליך.';
     });
   }
 

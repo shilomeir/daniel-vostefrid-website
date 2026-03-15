@@ -388,6 +388,41 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
   line-height: 1.7;
 }
 
+.hero__banners {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.hero-banner {
+  display: block;
+  padding: 12px 18px;
+  border-radius: var(--r-md);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  line-height: 1.4;
+}
+
+.hero-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+}
+
+.hero-banner--soldiers {
+  background: linear-gradient(135deg, #1a3a6b 0%, #2a5298 100%);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.hero-banner--guide {
+  background: linear-gradient(135deg, #7a5c2e 0%, #a67c44 100%);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
 .hero__actions {
   display: flex;
   gap: 16px;
@@ -662,130 +697,6 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
   font-style: italic;
 }
 
-/* ════════════════════════════════════════════════════
-   TOOLBOX — ארגז הכלים
-════════════════════════════════════════════════════ */
-.toolbox {
-  background: var(--cream);
-  padding: var(--sec-py) 0;
-}
-
-.toolbox__inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 var(--pad-x);
-}
-
-.toolbox__header {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 56px;
-}
-
-.toolbox__lead {
-  font-size: 1.05rem;
-  color: var(--text-mid);
-}
-
-/* Collapse: hide descriptions by default */
-.toolbox-card__detail {
-  display: none;
-  font-size: 0.93rem;
-  line-height: 1.75;
-  margin-top: 8px;
-}
-.toolbox--expanded .toolbox-card__detail {
-  display: block;
-}
-
-.toolbox__toggle-wrap {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.toolbox__toggle-btn {
-  min-width: 200px;
-  transition: transform var(--dur) var(--ease-spring),
-              box-shadow var(--dur) var(--ease),
-              background var(--dur-fast) var(--ease);
-}
-
-.toolbox__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.toolbox-card {
-  background: var(--white);
-  border-radius: var(--r-lg);
-  padding: 32px 28px;
-  box-shadow: var(--shadow-sm);
-  border-bottom: 3px solid transparent;
-  transition: transform var(--dur) var(--ease-spring),
-              box-shadow var(--dur) var(--ease),
-              border-color var(--dur) var(--ease);
-}
-
-.toolbox-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-md);
-  border-bottom-color: var(--blue-light);
-}
-
-.toolbox-card__icon {
-  font-size: 2.2rem;
-  margin-bottom: 16px;
-  display: block;
-  line-height: 1;
-}
-
-.toolbox-card h3 {
-  color: var(--blue-deep);
-  margin-bottom: 12px;
-  font-size: 1.15rem;
-}
-
-.toolbox-card p {
-  font-size: 0.93rem;
-  line-height: 1.75;
-}
-
-/* ════════════════════════════════════════════════════
-   CTA STRIP
-════════════════════════════════════════════════════ */
-
-/* Hidden by default — revealed when toolbox expands */
-#ctaStrip {
-  display: none;
-}
-#ctaStrip.is-visible {
-  display: block;
-}
-
-.cta-strip {
-  padding: 60px 0;
-}
-.cta-strip--blue {
-  background: var(--blue-mid);
-}
-.cta-strip__inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 var(--pad-x);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-.cta-strip__text {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  color: var(--white);
-  font-weight: 400;
-  line-height: 1.4;
-}
 
 /* ════════════════════════════════════════════════════
    SOLDIERS — לחיילים ומילואימניקים
@@ -1432,8 +1343,6 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
 
   .method__grid { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
 
-  .toolbox__grid { grid-template-columns: repeat(2, 1fr); }
-
   .cta-strip__inner { flex-direction: column; text-align: center; }
 
   .soldiers__body { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; }
@@ -1477,10 +1386,10 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
   .quote-section__actions { flex-direction: column; }
 
   .btn { padding: 13px 24px; font-size: 0.95rem; }
+  .hero__banners { width: 100%; }
+  .hero-banner { font-size: 0.88rem; }
   .hero__actions { flex-direction: column; align-items: center; }
   .hero__actions .btn { width: 100%; justify-content: center; }
-
-  .toolbox__grid { grid-template-columns: 1fr; max-width: 400px; margin-inline: auto; }
 
   .soldiers__symptoms { padding: 28px 24px; }
   .soldiers__workshop-title { margin: 24px 20px 6px; }
@@ -1594,30 +1503,15 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
   font-size: 0.95rem;
 }
 
-.lead-magnet__hint {
-  font-size: 0.92rem;
-  color: var(--text-mid);
+.lead-magnet__status-box {
   margin-top: 14px;
-  text-align: center;
-  line-height: 1.6;
-}
-
-.lead-magnet__success {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 16px 20px;
+  padding: 14px 20px;
   background: var(--cream);
   border-radius: var(--r-lg);
   color: var(--text-dark);
   font-size: 0.92rem;
   text-align: center;
   line-height: 1.6;
-}
-
-.lead-magnet__success-icon {
-  font-size: 1.6rem;
 }
 
 
