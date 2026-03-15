@@ -158,7 +158,24 @@
   window.addEventListener('scroll', updateActiveNav, { passive: true });
 
   /* ════════════════════════════════════════════════
-     7. LEAD MAGNET FORM
+     7. TOOLBOX TOGGLE
+  ════════════════════════════════════════════════ */
+  const toolboxToggle = document.getElementById('toolboxToggle');
+  const toolboxSection = document.getElementById('toolbox');
+  const ctaStrip = document.getElementById('ctaStrip');
+
+  if (toolboxToggle && toolboxSection) {
+    toolboxToggle.addEventListener('click', () => {
+      const isExpanded = toolboxSection.classList.toggle('toolbox--expanded');
+      toolboxToggle.textContent = isExpanded ? 'הסתר פרטים ↑' : 'לפרטים נוספים ↓';
+      if (ctaStrip) {
+        ctaStrip.classList.toggle('is-visible', isExpanded);
+      }
+    });
+  }
+
+  /* ════════════════════════════════════════════════
+     8. LEAD MAGNET FORM
   ════════════════════════════════════════════════ */
   const leadForm = document.getElementById('leadMagnetForm');
   const leadSuccess = document.getElementById('leadMagnetSuccess');
@@ -177,7 +194,7 @@
   }
 
   /* ════════════════════════════════════════════════
-     8. CONTACT FORM
+     9. CONTACT FORM
   ════════════════════════════════════════════════ */
   const contactForm = document.getElementById('contactForm');
   const contactSuccess = document.getElementById('contactFormSuccess');
