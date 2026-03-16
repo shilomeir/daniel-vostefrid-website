@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { href: "#about", label: "אודות" },
   { href: "#method", label: "שיטת הטיפול" },
+  { href: "#articles", label: "מאמרים" },
   { href: "#services", label: "שירותים" },
   { href: "#soldiers", label: "לחיילים" },
   { href: "#contact", label: "צור קשר" },

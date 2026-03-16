@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { BookOpen } from "lucide-react";
 
 const trustItems = [
   { label: "אוניברסיטת אריאל", sub: "MSW — בתהליך" },
@@ -57,7 +58,7 @@ export default function HeroSection() {
               ולקחת אחריות על חייו. עם הכלים הנכונים — הריפוי מתהווה מתוך פנים.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-12">
+            <div className="flex flex-wrap gap-4 mb-5">
               <a
                 href="#contact"
                 className="bg-sage text-white font-semibold px-6 py-3 rounded-full hover:bg-sage-dark transition-colors shadow-md"
@@ -71,6 +72,18 @@ export default function HeroSection() {
                 על שיטת הטיפול
               </a>
             </div>
+
+            {/* Articles banner */}
+            <motion.a
+              href="#articles"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="inline-flex items-center gap-2 bg-earth/15 border border-earth/30 text-earth-dark font-semibold px-5 py-2.5 rounded-full hover:bg-earth/25 transition-colors text-sm mb-12"
+            >
+              <BookOpen size={15} />
+              מאמרים חדשים בבלוג
+            </motion.a>
 
             {/* Trust Ribbon */}
             <div className="grid grid-cols-2 gap-3">

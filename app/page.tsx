@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import MethodSection from "@/components/MethodSection";
+import ArticlesSectionServer from "@/components/ArticlesSectionServer";
 import ServicesSection from "@/components/ServicesSection";
 import StudioSection from "@/components/StudioSection";
 import SoldiersSection from "@/components/SoldiersSection";
@@ -15,6 +17,9 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <MethodSection />
+      <Suspense fallback={null}>
+        <ArticlesSectionServer />
+      </Suspense>
       <ServicesSection />
       <StudioSection />
       <SoldiersSection />
