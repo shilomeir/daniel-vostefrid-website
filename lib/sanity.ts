@@ -5,8 +5,7 @@ export const sanityClient = createClient({
   dataset: "production",
   apiVersion: "2024-01-01",
   useCdn: false,
-  token:
-    "skGZovL1UT1UV5qR2OlxHxu1IOPg5LXikvQHIZQxlPEGpNR12QdmCw4jfe8I4lhKsfRgFLhBL8vYsg5I9JuG2rak7cgUgE04WGQjZBNA6MH3QagrvtroTbewLHN6cmIJztHKA094LugM6XqWD9GqQO3s8XA6o1wfcRAN77SxcP9QMbd8Dklo",
+  token: process.env.SANITY_API_TOKEN,
 });
 
 export function readingTime(
