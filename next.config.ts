@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Required for the embedded Sanity Studio at /studio
+  transpilePackages: ["sanity"],
 };
 
 export default nextConfig;
