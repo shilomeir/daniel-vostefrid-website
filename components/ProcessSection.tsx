@@ -31,7 +31,7 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="py-24 bg-warm-50">
+    <section className="py-24 bg-cream-dark">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,10 +39,10 @@ export default function ProcessSection() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="text-earth text-sm font-semibold tracking-widest uppercase">
+          <span className="text-blue-light text-sm font-semibold tracking-widest uppercase">
             איך מתחילים?
           </span>
-          <h2 className="font-serif text-4xl font-bold text-gray-900 mt-3">
+          <h2 className="font-serif text-4xl font-bold text-blue-deep mt-3">
             תהליך ההצטרפות
           </h2>
         </motion.div>
@@ -55,16 +55,16 @@ export default function ProcessSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
-              className="relative bg-white/80 backdrop-blur-sm border border-warm-200 rounded-3xl p-6 text-center"
+              className="relative bg-white/80 backdrop-blur-sm border border-cream-deeper rounded-3xl p-6 text-center"
             >
               <div className="text-4xl mb-4">{step.icon}</div>
-              <span className="text-earth text-sm font-bold">{step.num}</span>
-              <h3 className="font-bold text-gray-900 mt-1 mb-2">{step.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
+              <span className="text-blue-light text-sm font-bold">{step.num}</span>
+              <h3 className="font-bold text-text-dark mt-1 mb-2">{step.title}</h3>
+              <p className="text-text-mid text-sm leading-relaxed">{step.desc}</p>
 
               {/* Connector */}
               {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -end-3 w-6 h-0.5 bg-earth/30" />
+                <div className="hidden lg:block absolute top-1/2 -end-3 w-6 h-0.5 bg-sand/30" />
               )}
             </motion.div>
           ))}

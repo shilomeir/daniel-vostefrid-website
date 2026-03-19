@@ -25,7 +25,7 @@ const methods = [
 
 export default function MethodSection() {
   return (
-    <section id="method" className="py-24 bg-sage/5">
+    <section id="method" className="py-24 bg-blue-deep/5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -33,13 +33,13 @@ export default function MethodSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-earth text-sm font-semibold tracking-widest uppercase">
+          <span className="text-blue-light text-sm font-semibold tracking-widest uppercase">
             הגישה הטיפולית
           </span>
-          <h2 className="font-serif text-4xl font-bold text-gray-900 mt-3 mb-4">
+          <h2 className="font-serif text-4xl font-bold text-blue-deep mt-3 mb-4">
             שיטת הטיפול
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
+          <p className="text-text-mid max-w-2xl mx-auto">
             שילוב ייחודי של עומק רוחני ועומק פסיכולוגי. הבסיס הוא שיטת ימימה,
             ועמה — טיפול דינאמי וכלי גוף-נפש.
           </p>
@@ -53,18 +53,18 @@ export default function MethodSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-7 border border-warm-200 shadow-sm"
+              className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-7 border border-cream-deeper shadow-sm"
             >
-              <span className="text-6xl font-bold text-earth/20 font-serif absolute top-4 start-6">
+              <span className="text-6xl font-bold text-sand/20 font-serif absolute top-4 start-6">
                 {m.num}
               </span>
               <div className="relative mt-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{m.title}</h3>
+                <h3 className="text-xl font-bold text-text-dark mb-3">{m.title}</h3>
                 <p
-                  className="text-gray-600 text-sm leading-relaxed mb-3"
+                  className="text-text-mid text-sm leading-relaxed mb-3"
                   dangerouslySetInnerHTML={{ __html: m.body }}
                 />
-                <p className="text-earth-dark text-sm font-medium">{m.footer}</p>
+                <p className="text-sand-dark text-sm font-medium">{m.footer}</p>
               </div>
             </motion.div>
           ))}
@@ -76,10 +76,10 @@ export default function MethodSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-sage text-white rounded-3xl p-10 text-center"
+          className="bg-blue-deep text-white rounded-3xl p-10 text-center"
         >
           <svg
-            className="w-10 h-8 text-earth/60 mx-auto mb-4"
+            className="w-10 h-8 text-sand/60 mx-auto mb-4"
             viewBox="0 0 60 45"
             fill="none"
           >
@@ -90,9 +90,9 @@ export default function MethodSection() {
           </svg>
           <p className="font-serif text-2xl sm:text-3xl font-medium text-white/90 leading-relaxed">
             כאשר יש{" "}
-            <em className="text-earth-light not-italic font-bold">שלום פנימי</em>{" "}
+            <em className="text-sand-light not-italic font-bold">שלום פנימי</em>{" "}
             בין כל החלקים, מתאפשר לנפש לצאת{" "}
-            <em className="text-earth-light not-italic font-bold">מהתקיעות</em>
+            <em className="text-sand-light not-italic font-bold">מהתקיעות</em>
           </p>
         </motion.div>
       </div>

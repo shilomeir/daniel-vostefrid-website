@@ -16,7 +16,7 @@ export default function SoldiersSection() {
   const waHref = `https://wa.me/972509591974?text=${encodeURIComponent(waMessage)}`;
 
   return (
-    <section id="soldiers" className="py-24 bg-bone">
+    <section id="soldiers" className="py-24 bg-cream">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -24,15 +24,15 @@ export default function SoldiersSection() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="inline-flex items-center gap-2 bg-earth/20 text-earth-dark text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-flex items-center gap-2 bg-blue-pale text-blue-deep text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
             <Shield size={14} />
             לחיילים ומילואימניקים
           </span>
-          <h2 className="font-serif text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="font-serif text-4xl font-bold text-blue-deep mb-4">
             גיבור, נתת בשביל המדינה —<br />
             זה הזמן לתת לך בחזרה
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
+          <p className="text-text-mid max-w-2xl mx-auto">
             במהלך שנות עבודתי פיתחתי סדנאות טיפול מיוחדות לחיילים בסדיר ומילואים.
             מרחב לעיבוד, לשחרור, ולחזרה לעצמך.
           </p>
@@ -44,23 +44,23 @@ export default function SoldiersSection() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white/80 backdrop-blur-sm border border-warm-200 rounded-3xl p-8"
+            className="bg-white/80 backdrop-blur-sm border border-cream-deeper rounded-3xl p-8"
           >
-            <h3 className="font-bold text-xl text-gray-900 mb-6">
+            <h3 className="font-bold text-xl text-text-dark mb-6">
               מכיר את התחושות האלה?
             </h3>
             <ul className="space-y-4">
               {challenges.map((c) => (
                 <li key={c} className="flex items-start gap-3">
-                  <span className="w-2 h-2 rounded-full bg-earth mt-2 flex-shrink-0" />
-                  <span className="text-gray-700">{c}</span>
+                  <span className="w-2 h-2 rounded-full bg-sand mt-2 flex-shrink-0" />
+                  <span className="text-text-mid">{c}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-8 pt-6 border-t border-warm-100">
-              <p className="text-gray-600 leading-relaxed">
+            <div className="mt-8 pt-6 border-t border-cream-dark">
+              <p className="text-text-mid leading-relaxed">
                 אני רוצה להכיר אותך ולהציע לך כלים לתהליך.{" "}
-                <strong className="text-sage">
+                <strong className="text-blue-mid">
                   בהחזר מלא מקרן הסיוע למילואים!
                 </strong>
               </p>
@@ -72,7 +72,7 @@ export default function SoldiersSection() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-sage text-white rounded-3xl p-8 flex flex-col"
+            className="bg-blue-deep text-white rounded-3xl p-8 flex flex-col"
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
@@ -91,19 +91,19 @@ export default function SoldiersSection() {
 
             <div className="space-y-3 mb-8">
               <div className="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3">
-                <Calendar size={16} className="text-earth-light" />
+                <Calendar size={16} className="text-sand-light" />
                 <span className="text-sm">הזדמנויות שניה — בקרוב</span>
               </div>
               <div className="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3">
-                <MapPin size={16} className="text-earth-light" />
+                <MapPin size={16} className="text-sand-light" />
                 <span className="text-sm">אריאל, מכון לוז (מרכז אלמוג)</span>
               </div>
               <div className="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3">
-                <Clock size={16} className="text-earth-light" />
+                <Clock size={16} className="text-sand-light" />
                 <span className="text-sm">מספר מקומות מוגבל</span>
               </div>
               <div className="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3">
-                <Phone size={16} className="text-earth-light" />
+                <Phone size={16} className="text-sand-light" />
                 <span className="text-sm font-bold">הסדנה בחינם — בשבילך!</span>
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function SoldiersSection() {
                 href={waHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full bg-white text-sage font-bold text-center py-3 rounded-full hover:bg-warm-50 transition-colors"
+                className="block w-full bg-white text-blue-deep font-bold text-center py-3 rounded-full hover:bg-cream-dark transition-colors"
               >
                 להרשמה ופרטים נוספים
               </a>

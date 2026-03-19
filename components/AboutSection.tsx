@@ -13,7 +13,7 @@ const credentials = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 bg-bone">
+    <section id="about" className="py-24 bg-cream">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
@@ -39,7 +39,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="absolute -bottom-6 -start-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg max-w-[220px] border border-warm-100"
+              className="absolute -bottom-6 -start-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg max-w-[220px] border border-cream-dark"
             >
               <p className="text-sm text-gray-700 leading-relaxed font-medium">
                 &ldquo;הריפוי מתהווה מתוך קבלה עצמית, חום ואהבה פנימיים&rdquo;
@@ -54,7 +54,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <span className="text-earth text-sm font-semibold tracking-widest uppercase">
+            <span className="text-blue-light text-sm font-semibold tracking-widest uppercase">
               אודותי
             </span>
             <h2 className="font-serif text-4xl font-bold text-gray-900 mt-3 mb-6">
@@ -86,7 +86,7 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="flex items-start gap-3 bg-warm-50 rounded-xl px-4 py-3"
+                  className="flex items-start gap-3 bg-cream-dark rounded-xl px-4 py-3"
                 >
                   <span className="text-lg">{c.emoji}</span>
                   <span className="text-sm text-gray-700">{c.text}</span>

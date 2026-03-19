@@ -21,7 +21,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="he" dir="rtl">
-      <body className="font-sans bg-bone antialiased">
+      <body className="font-sans bg-cream antialiased">
         <Navbar />
         <main>{children}</main>
         <WhatsAppFloat />

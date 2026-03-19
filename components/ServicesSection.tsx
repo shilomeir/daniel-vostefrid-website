@@ -14,13 +14,13 @@ const services = [
     icon: Leaf,
     title: "שיטת ימימה",
     desc: "מפגש עם ההווה. בניית הכרה עצמית, הבנת דפוסי חשיבה, וריפוי מתוך קבלה ואהבה פנימית.",
-    color: "bg-sage/10 text-sage",
+    color: "bg-teal/10 text-teal",
   },
   {
     icon: Brain,
     title: "טיפול דינאמי",
     desc: "עבודה עם שכבות עמוקות של הנפש. הבנת מקורות הכאב ושינוי שמחזיק לאורך זמן.",
-    color: "bg-blue-50 text-blue-500",
+    color: "bg-blue-pale text-blue-deep",
   },
   {
     icon: Sparkles,
@@ -56,7 +56,7 @@ const item = {
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-24 bg-warm-50">
+    <section id="services" className="py-24 bg-cream-dark">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,13 +65,13 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="text-earth text-sm font-semibold tracking-widest uppercase">
+          <span className="text-blue-light text-sm font-semibold tracking-widest uppercase">
             ארגז הכלים שלי
           </span>
-          <h2 className="font-serif text-4xl font-bold text-gray-900 mt-3 mb-4">
+          <h2 className="font-serif text-4xl font-bold text-blue-deep mt-3 mb-4">
             שיטות הטיפול
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
+          <p className="text-text-mid max-w-xl mx-auto">
             שילוב ייחודי של גישות מבוססות-מחקר עם עומק רוחני. כל כלי נבחר
             בקפידה להתאמה אישית לתהליך שלך.
           </p>
@@ -88,13 +88,13 @@ export default function ServicesSection() {
             <motion.div
               key={s.title}
               variants={item}
-              className="bg-white/70 backdrop-blur-sm border border-warm-200 rounded-3xl p-6 hover:shadow-md transition-shadow group"
+              className="bg-white/70 backdrop-blur-sm border border-cream-deeper rounded-3xl p-6 hover:shadow-md transition-shadow group"
             >
               <div className={`w-12 h-12 ${s.color} rounded-2xl flex items-center justify-center mb-4`}>
                 <s.icon size={22} />
               </div>
-              <h3 className="font-semibold text-lg text-gray-900 mb-2">{s.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+              <h3 className="font-semibold text-lg text-text-dark mb-2">{s.title}</h3>
+              <p className="text-text-mid text-sm leading-relaxed">{s.desc}</p>
             </motion.div>
           ))}
         </motion.div>

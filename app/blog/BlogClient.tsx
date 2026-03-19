@@ -34,7 +34,7 @@ const item = {
 export default function BlogClient({ posts }: Props) {
   return (
     <>
-      <div className="min-h-screen bg-bone pt-24 pb-16">
+      <div className="min-h-screen bg-cream pt-24 pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           {/* Header */}
           <motion.div
@@ -42,13 +42,13 @@ export default function BlogClient({ posts }: Props) {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
-            <span className="text-earth text-sm font-semibold tracking-widest uppercase">
+            <span className="text-blue-light text-sm font-semibold tracking-widest uppercase">
               מחשבות ותובנות
             </span>
-            <h1 className="font-serif text-5xl font-bold text-gray-900 mt-3 mb-4">
+            <h1 className="font-serif text-5xl font-bold text-blue-deep mt-3 mb-4">
               הבלוג
             </h1>
-            <p className="text-gray-500 max-w-xl mx-auto">
+            <p className="text-text-mid max-w-xl mx-auto">
               מאמרים על פסיכותרפיה, שיטת ימימה, גוף-נפש ובריאות הנפש.
             </p>
           </motion.div>
@@ -65,7 +65,7 @@ export default function BlogClient({ posts }: Props) {
                 <motion.article
                   key={post._id}
                   variants={item}
-                  className="bg-white/80 backdrop-blur-sm border border-warm-200 rounded-3xl overflow-hidden hover:shadow-md transition-shadow group"
+                  className="bg-white/80 backdrop-blur-sm border border-cream-deeper rounded-3xl overflow-hidden hover:shadow-md transition-shadow group"
                 >
                   {/* Main Image */}
                   {post.mainImageUrl && (
@@ -82,26 +82,26 @@ export default function BlogClient({ posts }: Props) {
 
                   <div className="p-6 flex flex-col h-full">
                     {/* Date */}
-                    <span className="text-xs text-gray-400 mb-2">
+                    <span className="text-xs text-text-light mb-2">
                       {formatHebrewDate(post.publishedAt)}
                     </span>
 
-                    <h2 className="font-bold text-lg text-gray-900 mb-3 group-hover:text-sage transition-colors leading-snug">
+                    <h2 className="font-bold text-lg text-text-dark mb-3 group-hover:text-blue-mid transition-colors leading-snug">
                       {post.title}
                     </h2>
 
-                    <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-4">
+                    <p className="text-text-mid text-sm leading-relaxed flex-1 mb-4">
                       {post.excerpt}
                     </p>
 
-                    <div className="flex items-center justify-between pt-4 border-t border-warm-100">
-                      <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                    <div className="flex items-center justify-between pt-4 border-t border-cream-dark">
+                      <div className="flex items-center gap-1.5 text-xs text-text-light">
                         <Clock size={12} />
                         <span>{post.readingTime} דק׳ קריאה</span>
                       </div>
                       <Link
                         href={`/blog/${post.slug.current}`}
-                        className="flex items-center gap-1 text-sm font-semibold text-sage hover:gap-2 transition-all"
+                        className="flex items-center gap-1 text-sm font-semibold text-blue-deep hover:gap-2 transition-all"
                       >
                         קרא עוד
                         <ArrowLeft size={14} />
@@ -113,7 +113,7 @@ export default function BlogClient({ posts }: Props) {
             </motion.div>
           ) : (
             <div className="text-center py-20">
-              <p className="text-gray-400 text-lg">
+              <p className="text-text-light text-lg">
                 עדיין אין מאמרים. מאמרים חדשים יופיעו כאן בקרוב!
               </p>
             </div>

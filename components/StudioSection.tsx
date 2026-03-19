@@ -15,7 +15,7 @@ export default function StudioSection() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-sage/70 via-sage/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-blue-deep/70 via-blue-deep/20 to-transparent" />
 
       {/* Content */}
       <div className="relative h-full flex items-end pb-16 px-4 sm:px-6">
@@ -27,7 +27,7 @@ export default function StudioSection() {
             transition={{ duration: 0.7 }}
             className="max-w-lg"
           >
-            <p className="text-earth-light text-sm font-semibold mb-3 tracking-widest uppercase">
+            <p className="text-sand-light text-sm font-semibold mb-3 tracking-widest uppercase">
               המרחב הטיפולי
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
