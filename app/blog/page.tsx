@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { sanityClient, readingTime, extractPlainText } from "@/lib/sanity";
 import BlogClient from "./BlogClient";
 
 export const metadata: Metadata = {
@@ -7,48 +8,53 @@ export const metadata: Metadata = {
     "מאמרים על פסיכותרפיה, שיטת ימימה, גוף-נפש ובריאות הנפש מאת דניאל ווסטפריד.",
 };
 
-// Fallback posts while Sanity is not configured
-const samplePosts = [
-  {
-    _id: "1",
-    title: "מה זה שלום פנימי? מבוא לשיטת ימימה",
-    slug: { current: "shalom-pnimi" },
-    publishedAt: "2025-03-01",
-    excerpt:
-      "שיטת ימימה מדברת הרבה על 'שלום פנימי' — אבל מה זה אומר בפועל? מאמר זה מנסה להסביר את המושג בצורה פשוטה ומעשית.",
-    categories: ["yemima"],
-    readingTime: 5,
-  },
-  {
-    _id: "2",
-    title: "חזרה מהמילואים: למה קשה לחזור לשגרה?",
-    slug: { current: "return-from-reserves" },
-    publishedAt: "2025-02-14",
-    excerpt:
-      "אחרי שבועות או חודשים בשירות, החזרה הביתה לא תמיד קלה. הגוף חוזר — אבל הראש עוד שם. מה קורה ומה אפשר לעשות?",
-    categories: ["soldiers"],
-    readingTime: 4,
-  },
-  {
-    _id: "3",
-    title: "מגע עם ההווה: כלי פשוט לרגיעה מיידית",
-    slug: { current: "present-moment" },
-    publishedAt: "2025-01-20",
-    excerpt:
-      "רובנו חיים רוב הזמן בעבר או בעתיד. הנה תרגיל אחד פשוט שיעזור לך להתחבר להווה ולהרגיש יותר שלם.",
-    categories: ["mindbody"],
-    readingTime: 3,
-  },
-];
+const POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc){
+  _id,
+  title,
+  slug,
+  publishedAt,
+  body,
+  mainImage{asset->{url}}
+}`;
 
-const categoryLabels: Record<string, string> = {
-  yemima: "שיטת ימימה",
-  personal: "טיפול אישי",
-  mindbody: "גוף-נפש",
-  soldiers: "מילואים וחיילים",
-  parenting: "הורות",
-};
+interface SanityPost {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  publishedAt: string;
+  body?: Array<{ children?: Array<{ text: string }> }>;
+  mainImage?: { asset: { url: string } };
+}
 
-export default function BlogPage() {
-  return <BlogClient posts={samplePosts} categoryLabels={categoryLabels} />;
+export default async function BlogPage() {
+  let posts: {
+    _id: string;
+    title: string;
+    slug: { current: string };
+    publishedAt: string;
+    excerpt: string;
+    readingTime: number;
+    mainImageUrl?: string;
+  }[] = [];
+
+  try {
+    const sanityPosts: SanityPost[] = await sanityClient.fetch(
+      POSTS_QUERY,
+      {},
+      { next: { revalidate: 0 } }
+    );
+    posts = sanityPosts.map((p) => ({
+      _id: p._id,
+      title: p.title,
+      slug: p.slug,
+      publishedAt: p.publishedAt,
+      excerpt: extractPlainText(p.body ?? []).slice(0, 200),
+      readingTime: readingTime(p.body ?? []),
+      mainImageUrl: p.mainImage?.asset?.url,
+    }));
+  } catch {
+    // If Sanity is unreachable, show empty state
+  }
+
+  return <BlogClient posts={posts} />;
 }

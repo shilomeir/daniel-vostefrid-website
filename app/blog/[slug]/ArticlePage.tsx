@@ -2,41 +2,32 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Share2 } from "lucide-react";
 import { PortableText } from "@portabletext/react";
-import type { PortableTextBlock } from "@portabletext/react";
 import Footer from "@/components/Footer";
+import { formatHebrewDate, urlFor } from "@/lib/sanity";
 
 interface Post {
   _id: string;
   title: string;
   slug: string;
-  excerpt?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   body: any[];
   publishedAt: string;
-  author?: string;
-  categories?: string[];
+  mainImage?: { asset: { url: string } };
 }
-
-const categoryLabels: Record<string, string> = {
-  yemima: "שיטת ימימה",
-  personal: "טיפול אישי",
-  mindbody: "גוף-נפש",
-  soldiers: "מילואים וחיילים",
-  parenting: "הורות",
-};
 
 const portableTextComponents = {
   block: {
-    h1: ({ children }: { children?: React.ReactNode }) => (
-      <h1 className="font-serif text-3xl font-bold text-gray-900 mt-8 mb-4">{children}</h1>
-    ),
     h2: ({ children }: { children?: React.ReactNode }) => (
       <h2 className="font-serif text-2xl font-bold text-gray-900 mt-8 mb-3">{children}</h2>
     ),
     h3: ({ children }: { children?: React.ReactNode }) => (
       <h3 className="font-serif text-xl font-bold text-gray-900 mt-6 mb-3">{children}</h3>
+    ),
+    h4: ({ children }: { children?: React.ReactNode }) => (
+      <h4 className="font-serif text-lg font-bold text-gray-900 mt-5 mb-2">{children}</h4>
     ),
     normal: ({ children }: { children?: React.ReactNode }) => (
       <p className="text-gray-700 leading-relaxed mb-4 text-base">{children}</p>
@@ -53,6 +44,9 @@ const portableTextComponents = {
     ),
     em: ({ children }: { children?: React.ReactNode }) => (
       <em className="italic">{children}</em>
+    ),
+    underline: ({ children }: { children?: React.ReactNode }) => (
+      <span className="underline decoration-earth/50 underline-offset-2">{children}</span>
     ),
     link: ({ value, children }: { value?: { href: string }; children?: React.ReactNode }) => (
       <a
@@ -73,18 +67,34 @@ const portableTextComponents = {
       <ol className="list-decimal list-inside space-y-2 mb-4 text-gray-700 mr-4">{children}</ol>
     ),
   },
+  types: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    image: ({ value }: { value: any }) => {
+      if (!value?.asset) return null;
+      const imageUrl = urlFor(value).width(800).quality(80).url();
+      return (
+        <figure className="my-8">
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden">
+            <Image
+              src={imageUrl}
+              alt={value.alt || "תמונה מתוך המאמר"}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 700px"
+            />
+          </div>
+          {value.alt && (
+            <figcaption className="text-center text-sm text-gray-400 mt-2">
+              {value.alt}
+            </figcaption>
+          )}
+        </figure>
+      );
+    },
+  },
 };
 
 export default function ArticlePage({ post }: { post: Post }) {
-  const formatDate = (dateStr: string) => {
-    const d = new Date(dateStr);
-    return d.toLocaleDateString("he-IL", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    });
-  };
-
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(
     `${post.title}\n${shareUrl}`
@@ -101,11 +111,11 @@ export default function ArticlePage({ post }: { post: Post }) {
             className="mb-8"
           >
             <Link
-              href="/#articles"
+              href="/blog"
               className="inline-flex items-center gap-2 bg-sage text-white font-semibold px-5 py-2.5 rounded-full hover:bg-sage-dark transition-colors shadow-sm"
             >
               <ArrowRight size={16} />
-              חזרה לדף הבית
+              חזרה לבלוג
             </Link>
           </motion.div>
 
@@ -115,28 +125,33 @@ export default function ArticlePage({ post }: { post: Post }) {
             animate={{ opacity: 1, y: 0 }}
             className="mb-10"
           >
-            {post.categories && post.categories.length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-4">
-                {post.categories.map((cat) => (
-                  <span
-                    key={cat}
-                    className="text-xs bg-sage/10 text-sage px-3 py-1 rounded-full font-medium"
-                  >
-                    {categoryLabels[cat] ?? cat}
-                  </span>
-                ))}
-              </div>
-            )}
-
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
               {post.title}
             </h1>
 
             <div className="flex items-center gap-4 text-sm text-gray-400">
-              {post.author && <span>{post.author}</span>}
-              <span>{formatDate(post.publishedAt)}</span>
+              <span>דניאל ווסטפריד</span>
+              {post.publishedAt && <span>{formatHebrewDate(post.publishedAt)}</span>}
             </div>
           </motion.header>
+
+          {/* Main Image */}
+          {post.mainImage?.asset?.url && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="relative w-full aspect-video rounded-3xl overflow-hidden mb-10"
+            >
+              <Image
+                src={post.mainImage.asset.url}
+                alt={post.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 700px"
+                priority
+              />
+            </motion.div>
+          )}
 
           {/* Divider */}
           <div className="h-px bg-gradient-to-l from-transparent via-earth/30 to-transparent mb-10" />
@@ -175,7 +190,7 @@ export default function ArticlePage({ post }: { post: Post }) {
           {/* Bottom back button */}
           <div className="mt-10 text-center">
             <Link
-              href="/#articles"
+              href="/blog"
               className="inline-flex items-center gap-2 border border-sage/40 text-sage font-semibold px-6 py-3 rounded-full hover:bg-sage/5 transition-colors"
             >
               <ArrowRight size={16} />

@@ -4,6 +4,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BookOpen, ArrowLeft, Share2 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { formatHebrewDate } from "@/lib/sanity";
 
 interface Article {
   _id: string;
@@ -11,6 +13,7 @@ interface Article {
   slug: string;
   excerpt: string;
   publishedAt: string;
+  mainImageUrl?: string;
 }
 
 interface Props {
@@ -21,15 +24,6 @@ export default function ArticlesSection({ articles }: Props) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   if (articles.length === 0) return null;
-
-  const formatDate = (dateStr: string) => {
-    const d = new Date(dateStr);
-    return d.toLocaleDateString("he-IL", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    });
-  };
 
   const truncate = (text: string, wordCount: number) => {
     const words = text.split(/\s+/);
@@ -83,13 +77,25 @@ export default function ArticlesSection({ articles }: Props) {
                 transition={{ delay: i * 0.15 }}
                 className="relative bg-white/80 backdrop-blur-sm rounded-3xl border border-warm-200 shadow-sm flex flex-col overflow-hidden"
               >
-                {/* Decorative top bar */}
-                <div className="h-1.5 bg-gradient-to-l from-sage via-earth to-sage-light" />
+                {/* Main Image or decorative top bar */}
+                {article.mainImageUrl ? (
+                  <div className="relative w-full h-44 overflow-hidden">
+                    <Image
+                      src={article.mainImageUrl}
+                      alt={article.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                ) : (
+                  <div className="h-1.5 bg-gradient-to-l from-sage via-earth to-sage-light" />
+                )}
 
                 <div className="p-7 flex flex-col flex-1" dir="rtl">
                   {/* Date */}
                   <span className="text-xs text-gray-400 mb-3">
-                    {formatDate(article.publishedAt)}
+                    {formatHebrewDate(article.publishedAt)}
                   </span>
 
                   {/* Title */}

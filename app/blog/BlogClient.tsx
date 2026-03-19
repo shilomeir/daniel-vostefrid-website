@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Clock, ArrowLeft } from "lucide-react";
 import Footer from "@/components/Footer";
+import { formatHebrewDate } from "@/lib/sanity";
 
 interface Post {
   _id: string;
@@ -12,13 +13,12 @@ interface Post {
   slug: { current: string };
   publishedAt: string;
   excerpt: string;
-  categories: string[];
   readingTime: number;
+  mainImageUrl?: string;
 }
 
 interface Props {
   posts: Post[];
-  categoryLabels: Record<string, string>;
 }
 
 const container = {
@@ -31,16 +31,7 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-export default function BlogClient({ posts, categoryLabels }: Props) {
-  const [activeCategory, setActiveCategory] = useState<string>("all");
-
-  const allCategories = ["all", ...Array.from(new Set(posts.flatMap((p) => p.categories)))];
-
-  const filtered =
-    activeCategory === "all"
-      ? posts
-      : posts.filter((p) => p.categories.includes(activeCategory));
-
+export default function BlogClient({ posts }: Props) {
   return (
     <>
       <div className="min-h-screen bg-bone pt-24 pb-16">
@@ -62,79 +53,70 @@ export default function BlogClient({ posts, categoryLabels }: Props) {
             </p>
           </motion.div>
 
-          {/* Category filters */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
-            {allCategories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  activeCategory === cat
-                    ? "bg-sage text-white shadow-sm"
-                    : "bg-white border border-warm-200 text-gray-600 hover:border-sage/40"
-                }`}
-              >
-                {cat === "all" ? "הכל" : categoryLabels[cat] ?? cat}
-              </button>
-            ))}
-          </div>
-
           {/* Grid */}
-          <motion.div
-            variants={container}
-            initial="hidden"
-            animate="show"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {filtered.map((post) => (
-              <motion.article
-                key={post._id}
-                variants={item}
-                className="bg-white/80 backdrop-blur-sm border border-warm-200 rounded-3xl overflow-hidden hover:shadow-md transition-shadow group"
-              >
-                <div className="p-6 flex flex-col h-full">
-                  {/* Category tags */}
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {post.categories.map((cat) => (
-                      <span
-                        key={cat}
-                        className="text-xs bg-sage/10 text-sage px-2 py-0.5 rounded-full"
-                      >
-                        {categoryLabels[cat] ?? cat}
-                      </span>
-                    ))}
-                  </div>
-
-                  <h2 className="font-bold text-lg text-gray-900 mb-3 group-hover:text-sage transition-colors leading-snug">
-                    {post.title}
-                  </h2>
-
-                  <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-4">
-                    {post.excerpt}
-                  </p>
-
-                  <div className="flex items-center justify-between pt-4 border-t border-warm-100">
-                    <div className="flex items-center gap-1.5 text-xs text-gray-400">
-                      <Clock size={12} />
-                      <span>{post.readingTime} דק׳ קריאה</span>
+          {posts.length > 0 ? (
+            <motion.div
+              variants={container}
+              initial="hidden"
+              animate="show"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+              {posts.map((post) => (
+                <motion.article
+                  key={post._id}
+                  variants={item}
+                  className="bg-white/80 backdrop-blur-sm border border-warm-200 rounded-3xl overflow-hidden hover:shadow-md transition-shadow group"
+                >
+                  {/* Main Image */}
+                  {post.mainImageUrl && (
+                    <div className="relative w-full h-48 overflow-hidden">
+                      <Image
+                        src={post.mainImageUrl}
+                        alt={post.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
                     </div>
-                    <Link
-                      href={`/blog/${post.slug.current}`}
-                      className="flex items-center gap-1 text-sm font-semibold text-sage hover:gap-2 transition-all"
-                    >
-                      קרא עוד
-                      <ArrowLeft size={14} />
-                    </Link>
-                  </div>
-                </div>
-              </motion.article>
-            ))}
-          </motion.div>
+                  )}
 
-          {filtered.length === 0 && (
-            <p className="text-center text-gray-400 py-12">
-              אין פוסטים בקטגוריה זו עדיין.
-            </p>
+                  <div className="p-6 flex flex-col h-full">
+                    {/* Date */}
+                    <span className="text-xs text-gray-400 mb-2">
+                      {formatHebrewDate(post.publishedAt)}
+                    </span>
+
+                    <h2 className="font-bold text-lg text-gray-900 mb-3 group-hover:text-sage transition-colors leading-snug">
+                      {post.title}
+                    </h2>
+
+                    <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-4">
+                      {post.excerpt}
+                    </p>
+
+                    <div className="flex items-center justify-between pt-4 border-t border-warm-100">
+                      <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                        <Clock size={12} />
+                        <span>{post.readingTime} דק׳ קריאה</span>
+                      </div>
+                      <Link
+                        href={`/blog/${post.slug.current}`}
+                        className="flex items-center gap-1 text-sm font-semibold text-sage hover:gap-2 transition-all"
+                      >
+                        קרא עוד
+                        <ArrowLeft size={14} />
+                      </Link>
+                    </div>
+                  </div>
+                </motion.article>
+              ))}
+            </motion.div>
+          ) : (
+            <div className="text-center py-20">
+              <p className="text-gray-400 text-lg">
+                עדיין אין מאמרים. מאמרים חדשים יופיעו כאן בקרוב!
+              </p>
+            </div>
           )}
         </div>
       </div>
