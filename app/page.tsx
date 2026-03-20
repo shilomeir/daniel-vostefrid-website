@@ -195,6 +195,9 @@ const BODY_BEFORE_ARTICLES = `
           <a class="hero-banner hero-banner--guide" href="#lead-magnet">
             📖 מדריך חינמי: 5 כלים לשלום פנימי — קבל עכשיו ←
           </a>
+          <a class="hero-banner hero-banner--articles" href="#articles">
+            ✍️ מאמרים חדשים בבלוג — קרא עכשיו ←
+          </a>
         </div>
         <div class="hero__actions">
           <a class="btn btn--outline" href="#about">קרא עוד ↓</a>

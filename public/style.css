@@ -422,6 +422,11 @@ p  { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-mid); line-height:
   color: #fff;
   border: 2px solid rgba(255,255,255,0.2);
 }
+.hero-banner--articles {
+  background: linear-gradient(135deg, #1a5276 0%, #5BAFD0 100%);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.2);
+}
 
 .hero__actions {
   display: flex;
