@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import BlogClient from "./BlogClient";
 
 export const metadata: Metadata = {
-  title: "בלוג | דניאל ווסטפריד",
+  title: "בלוג | דניאל וסטפריד",
   description:
-    "מאמרים על פסיכותרפיה, שיטת ימימה, גוף-נפש ובריאות הנפש מאת דניאל ווסטפריד.",
+    "מאמרים על פסיכותרפיה, שיטת ימימה, גוף-נפש ובריאות הנפש מאת דניאל וסטפריד.",
 };
 
 // Fallback posts while Sanity is not configured

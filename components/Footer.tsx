@@ -8,13 +8,13 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <Image
               src="/images/logo.png"
-              alt="דניאל ווסטפריד"
+              alt="דניאל וסטפריד"
               width={40}
               height={40}
               className="rounded-full opacity-90"
             />
             <div>
-              <p className="font-bold">דניאל ווסטפריד</p>
+              <p className="font-bold">דניאל וסטפריד</p>
               <p className="text-white/60 text-sm">פסיכותרפיסט ומטפל גוף-נפש</p>
             </div>
           </div>
@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-6 border-t border-white/10 text-center text-xs text-white/40">
-          © {new Date().getFullYear()} דניאל ווסטפריד. כל הזכויות שמורות.
+          © {new Date().getFullYear()} דניאל וסטפריד. כל הזכויות שמורות.
         </div>
       </div>
     </footer>

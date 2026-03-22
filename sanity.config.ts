@@ -5,7 +5,7 @@ import { postSchema } from "@/sanity/schemas/post";
 export default defineConfig({
   projectId: "3zyocf76",
   dataset: "production",
-  title: "דניאל ווסטפריד — ניהול תוכן",
+  title: "דניאל וסטפריד — ניהול תוכן",
   basePath: "/studio",
   plugins: [structureTool()],
   schema: {

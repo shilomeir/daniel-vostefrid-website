@@ -1,14 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Shield, MapPin, Calendar, Clock, Phone } from "lucide-react";
-
-const challenges = [
-  "חזרת הביתה אבל לא מרגיש כמו הבית",
-  "פלאשבקים, קשיי שינה, ריחוק רגשי",
-  "קושי במעבר בין חיי מילואים לחיים האזרחיים",
-  "כעסים, עצבנות וחרדה שלא מרפים",
-];
 
 export default function SoldiersSection() {
   const waMessage =
@@ -39,32 +33,20 @@ export default function SoldiersSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Challenges card */}
+          {/* Poster image card */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white/80 backdrop-blur-sm border border-warm-200 rounded-3xl p-8"
+            className="rounded-3xl overflow-hidden min-h-[480px] relative"
           >
-            <h3 className="font-bold text-xl text-gray-900 mb-6">
-              מכיר את התחושות האלה?
-            </h3>
-            <ul className="space-y-4">
-              {challenges.map((c) => (
-                <li key={c} className="flex items-start gap-3">
-                  <span className="w-2 h-2 rounded-full bg-earth mt-2 flex-shrink-0" />
-                  <span className="text-gray-700">{c}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8 pt-6 border-t border-warm-100">
-              <p className="text-gray-600 leading-relaxed">
-                אני רוצה להכיר אותך ולהציע לך כלים לתהליך.{" "}
-                <strong className="text-sage">
-                  בהחזר מלא מקרן הסיוע למילואים!
-                </strong>
-              </p>
-            </div>
+            <Image
+              src="/images/soldiers-poster.jpg"
+              alt="סדנה למילואימניקים"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
           </motion.div>
 
           {/* Workshop card */}
@@ -88,6 +70,17 @@ export default function SoldiersSection() {
               סדנאות מיוחדות לחיילים הגיבורים שלנו. נתנסה במספר כלים טיפוליים
               שיעזרו לנו לשחרר את מה שיושב לנו בבטן.
             </p>
+
+            {/* Yoga mats image */}
+            <div className="relative h-48 rounded-2xl overflow-hidden mb-6">
+              <Image
+                src="/images/yoga-mats.jpg"
+                alt="מיזרונים לסדנה"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
 
             <div className="space-y-3 mb-8">
               <div className="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3">

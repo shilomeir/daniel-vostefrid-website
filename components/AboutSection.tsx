@@ -24,27 +24,39 @@ export default function AboutSection() {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="relative h-[480px] rounded-[2rem] overflow-hidden">
+            <div className="relative">
+              <div className="relative h-[480px] rounded-[2rem] overflow-hidden">
+                <Image
+                  src="/images/daniel-about.jpg"
+                  alt="דניאל וסטפריד"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              {/* Floating quote card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="absolute -bottom-6 -start-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg max-w-[220px] border border-warm-100"
+              >
+                <p className="text-sm text-gray-700 leading-relaxed font-medium">
+                  &ldquo;הריפוי מתהווה מתוך קבלה עצמית, חום ואהבה פנימיים&rdquo;
+                </p>
+              </motion.div>
+            </div>
+            {/* Bench photo */}
+            <div className="relative h-40 rounded-2xl overflow-hidden mt-10">
               <Image
-                src="/images/daniel-about.jpg"
-                alt="דניאל ווסטפריד"
+                src="/images/daniel-bench.jpg"
+                alt="דניאל וסטפריד"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover object-top"
               />
             </div>
-            {/* Floating quote card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="absolute -bottom-6 -start-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg max-w-[220px] border border-warm-100"
-            >
-              <p className="text-sm text-gray-700 leading-relaxed font-medium">
-                &ldquo;הריפוי מתהווה מתוך קבלה עצמית, חום ואהבה פנימיים&rdquo;
-              </p>
-            </motion.div>
           </motion.div>
 
           {/* Text */}
@@ -58,7 +70,7 @@ export default function AboutSection() {
               אודותי
             </span>
             <h2 className="font-serif text-4xl font-bold text-gray-900 mt-3 mb-6">
-              שמי דניאל ווסטפריד
+              שמי דניאל וסטפריד
             </h2>
 
             <div className="space-y-4 text-gray-600 leading-relaxed mb-8">
@@ -66,6 +78,9 @@ export default function AboutSection() {
                 בחרתי לעסוק בתחום הטיפול מתוך{" "}
                 <strong className="text-gray-800">שליחות</strong> ואמונה גדולה
                 ביכולת האדם להתפתח, להשתנות ולקחת אחריות על חייו.
+              </p>
+              <p>
+                כמו כן, אני בלימודי התואר השני בעבודה סוציאלית (MSW) באוניברסיטת אריאל.
               </p>
               <p>
                 במהלך עבודתי החינוכית נחשפתי להרבה קשיים, טראומות ומצבי נפש

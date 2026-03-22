@@ -37,13 +37,13 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/logo.png"
-            alt="דניאל ווסטפריד"
+            alt="דניאל וסטפריד"
             width={44}
             height={44}
             className="rounded-full object-contain"
           />
           <span className="hidden sm:block text-sage font-semibold text-sm">
-            דניאל ווסטפריד
+            דניאל וסטפריד
           </span>
         </Link>
 

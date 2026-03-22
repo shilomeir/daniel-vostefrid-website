@@ -54,7 +54,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-gray-600 text-lg leading-relaxed mb-8 max-w-lg">
-              אני דניאל ווסטפריד. מאמין גדול ביכולת של האדם להשתנות, לצמוח
+              אני דניאל וסטפריד. מאמין גדול ביכולת של האדם להשתנות, לצמוח
               ולקחת אחריות על חייו. עם הכלים הנכונים — הריפוי מתהווה מתוך פנים.
             </p>
 
@@ -114,7 +114,7 @@ export default function HeroSection() {
               <div className="absolute inset-4 bg-earth/20 rounded-[40%_60%_60%_40%/40%_40%_60%_60%] -z-10" />
               <Image
                 src="/images/daniel-hero.jpg"
-                alt="דניאל ווסטפריד, פסיכותרפיסט"
+                alt="דניאל וסטפריד, פסיכותרפיסט"
                 fill
                 priority
                 sizes="(max-width: 768px) 320px, 420px"

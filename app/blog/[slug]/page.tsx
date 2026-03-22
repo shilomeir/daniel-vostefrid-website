@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       extractPlainText(post.body).slice(0, 160);
 
     return {
-      title: `${title} | דניאל ווסטפריד`,
+      title: `${title} | דניאל וסטפריד`,
       description,
       openGraph: {
         title,
@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     };
   } catch {
-    return { title: "מאמר | דניאל ווסטפריד" };
+    return { title: "מאמר | דניאל וסטפריד" };
   }
 }
 

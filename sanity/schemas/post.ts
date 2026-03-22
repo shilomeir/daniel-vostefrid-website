@@ -20,7 +20,7 @@ export const postSchema = {
       name: "author",
       title: "מחבר",
       type: "string",
-      initialValue: "דניאל ווסטפריד",
+      initialValue: "דניאל וסטפריד",
     },
     {
       name: "mainImage",
