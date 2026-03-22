@@ -38,15 +38,26 @@ export default function SoldiersSection() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-3xl overflow-hidden min-h-[480px] relative"
+            className="flex flex-col gap-3"
           >
-            <Image
-              src="/images/soldiers-poster.jpg"
-              alt="סדנה למילואימניקים"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
+            <div className="relative h-[340px] rounded-3xl overflow-hidden">
+              <Image
+                src="/images/soldiers-poster.jpg"
+                alt="סדנה למילואימניקים"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative h-40 rounded-2xl overflow-hidden">
+              <Image
+                src="/images/daniel-military.jpg"
+                alt="דניאל וסטפריד בשירות מילואים"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
+              />
+            </div>
           </motion.div>
 
           {/* Workshop card */}
