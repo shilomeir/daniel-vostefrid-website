@@ -254,6 +254,85 @@ const BODY_BEFORE_ARTICLES = `
   </section>
 
   <!-- ═══════════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════ -->
+  <section class="about" id="about">
+    <div class="about__inner">
+      <div class="about__image-wrap" data-animate>
+        <div class="about__image">
+          <img src="images/daniel-about.jpg" alt="דניאל וסטפריד" />
+        </div>
+        <div class="about__image-ring" aria-hidden="true"></div>
+      </div>
+
+      <div class="about__content" data-animate data-delay="150">
+        <h2 class="section-title">שלום, אני דניאל</h2>
+        <p>נשוי ואב לשישה, גר בכפר תפוח בשומרון. מעל עשור שאני עוסק בטיפול נפשי, מתוך שליחות אמיתית ואמונה עמוקה ביכולתו של האדם להשתנות.</p>
+        <p>למדתי פסיכותרפיה אינטגרטיבית במכון אבולעפיה (אוניברסיטת חיפה). בחרתי לעסוק בתחום הטיפול מתוך שליחות, ומאמין שכל אדם יכול להתפתח, להשתנות, ולקחת אחריות על חייו.</p>
+        <p>במהלך עבודתי החינוכית נחשפתי להרבה קשיים, טראומות ומצבי נפש לא פשוטים של נערים ובוגרים. ראיתי כמה הם זקוקים להכוונה, ולכן בחרתי לעסוק בטיפול.</p>
+
+        <div class="credentials">
+          <div class="credential-badge">
+            <span class="credential-badge__icon" aria-hidden="true">📚</span>
+            <span>פסיכותרפיה אינטגרטיבית, מכון אבולעפיה, אוניברסיטת חיפה</span>
+          </div>
+          <div class="credential-badge">
+            <span class="credential-badge__icon" aria-hidden="true">🌿</span>
+            <span>שיטת ימימה, למעלה מ-10 שנות לימוד ועיסוק</span>
+          </div>
+          <div class="credential-badge">
+            <span class="credential-badge__icon" aria-hidden="true">🪖</span>
+            <span>סדנאות טיפול ועיבוד מיוחדות לחיילים</span>
+          </div>
+          <div class="credential-badge">
+            <span class="credential-badge__icon" aria-hidden="true">🎓</span>
+            <span>לימודי תואר שני בעבודה סוציאלית, אוניברסיטת אריאל</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO STRIP -->
+  <div class="photo-strip" data-animate>
+    <img src="images/daniel-bench.jpg" alt="דניאל וסטפריד" loading="lazy" />
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       METHOD
+  ═══════════════════════════════════════════ -->
+  <section class="method" id="method">
+    <div class="method__inner">
+      <div class="method__header" data-animate>
+        <span class="section-label">הגישה הטיפולית</span>
+        <h2 class="section-title">שיטת ימימה</h2>
+        <p class="method__lead">הבסיס הטיפולי שלי שואב מעולמות שונים ומשלב אותם לתהליך אחד: מותאם, עמוק ומשחרר.</p>
+      </div>
+
+      <div class="method__grid">
+        <div class="method-card" data-animate>
+          <div class="method-card__num" aria-hidden="true">01</div>
+          <h3>שיטת ימימה</h3>
+          <p>מפגש של האדם עם ההווה, עם מה שמאתגר אותו כאן ועכשיו. מתוך כך נבנית <strong>הכרה</strong> והבנה הקושרת אל העבר, אל המקום בו התקבעו ההתנהגויות ודפוסי החשיבה.</p>
+          <p>הריפוי מתהווה מתוך קבלה עצמית, חום ואהבה פנימיים ל"ילד" שבתוכנו.</p>
+        </div>
+        <div class="method-card" data-animate data-delay="120">
+          <div class="method-card__num" aria-hidden="true">02</div>
+          <h3>טיפול דינאמי</h3>
+          <p>עבודה עם שכבות עמוקות של הנפש: הבנת מקורות הכאב, הדפוסים הפנימיים, ומה שמניע את ההתנהגות שלנו.</p>
+          <p>שיטה המאפשרת שינוי עמוק ומתמשך, שמחזיק לאורך זמן.</p>
+        </div>
+        <div class="method-card" data-animate data-delay="240">
+          <div class="method-card__num" aria-hidden="true">03</div>
+          <h3>כלי גוף-נפש</h3>
+          <p>שיטת <strong>המסע</strong>, <strong>התמקדות</strong>, ו<strong>נשימות מעגליות</strong>: כלים גופניים המאפשרים גמישות טיפולית.</p>
+          <p>מצליחים לקדם את התהליך במקומות הקשים ביותר, שם המילים לבדן אינן מספיקות.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        LEAD MAGNET
   ═══════════════════════════════════════════ -->
   <section class="lead-magnet" id="lead-magnet">
@@ -292,7 +371,7 @@ const BODY_BEFORE_ARTICLES = `
 
       <div class="soldiers__body">
         <div class="soldiers__poster" data-animate>
-          <img src="images/soldiers-poster.jpg"
+          <img src="images/פוסטר לחיילים.jpg"
                alt="נתת בשביל המדינה? זה הזמן לתת לך בחזרה"
                class="soldiers__poster-img" loading="lazy" />
         </div>
@@ -389,83 +468,6 @@ const BODY_BEFORE_ARTICLES = `
           </svg>
           התחל את הצעד הראשון
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       ABOUT
-  ═══════════════════════════════════════════ -->
-  <section class="about" id="about">
-    <div class="about__inner">
-      <div class="about__image-wrap" data-animate>
-        <div class="about__image">
-          <img src="images/daniel-about.jpg" alt="דניאל וסטפריד" />
-        </div>
-        <div class="about__image-ring" aria-hidden="true"></div>
-        <div class="about__image about__image--secondary" data-animate data-delay="100">
-          <img src="images/daniel-bench.jpg" alt="דניאל וסטפריד" loading="lazy" />
-        </div>
-      </div>
-
-      <div class="about__content" data-animate data-delay="150">
-        <h2 class="section-title">שלום, אני דניאל</h2>
-        <p>נשוי ואב לשישה, גר בכפר תפוח בשומרון. מעל עשור שאני עוסק בטיפול נפשי, מתוך שליחות אמיתית ואמונה עמוקה ביכולתו של האדם להשתנות.</p>
-        <p>למדתי פסיכותרפיה אינטגרטיבית במכון אבולעפיה (אוניברסיטת חיפה). בחרתי לעסוק בתחום הטיפול מתוך שליחות, ומאמין שכל אדם יכול להתפתח, להשתנות, ולקחת אחריות על חייו.</p>
-        <p>במהלך עבודתי החינוכית נחשפתי להרבה קשיים, טראומות ומצבי נפש לא פשוטים של נערים ובוגרים. ראיתי כמה הם זקוקים להכוונה, ולכן בחרתי לעסוק בטיפול.</p>
-
-        <div class="credentials">
-          <div class="credential-badge">
-            <span class="credential-badge__icon" aria-hidden="true">📚</span>
-            <span>פסיכותרפיה אינטגרטיבית, מכון אבולעפיה, אוניברסיטת חיפה</span>
-          </div>
-          <div class="credential-badge">
-            <span class="credential-badge__icon" aria-hidden="true">🌿</span>
-            <span>שיטת ימימה, למעלה מ-10 שנות לימוד ועיסוק</span>
-          </div>
-          <div class="credential-badge">
-            <span class="credential-badge__icon" aria-hidden="true">🪖</span>
-            <span>סדנאות טיפול ועיבוד מיוחדות לחיילים</span>
-          </div>
-          <div class="credential-badge">
-            <span class="credential-badge__icon" aria-hidden="true">🎓</span>
-            <span>לימודי תואר שני בעבודה סוציאלית, אוניברסיטת אריאל</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       METHOD
-  ═══════════════════════════════════════════ -->
-  <section class="method" id="method">
-    <div class="method__inner">
-      <div class="method__header" data-animate>
-        <span class="section-label">הגישה הטיפולית</span>
-        <h2 class="section-title">שיטת ימימה</h2>
-        <p class="method__lead">הבסיס הטיפולי שלי שואב מעולמות שונים ומשלב אותם לתהליך אחד: מותאם, עמוק ומשחרר.</p>
-      </div>
-
-      <div class="method__grid">
-        <div class="method-card" data-animate>
-          <div class="method-card__num" aria-hidden="true">01</div>
-          <h3>שיטת ימימה</h3>
-          <p>מפגש של האדם עם ההווה, עם מה שמאתגר אותו כאן ועכשיו. מתוך כך נבנית <strong>הכרה</strong> והבנה הקושרת אל העבר, אל המקום בו התקבעו ההתנהגויות ודפוסי החשיבה.</p>
-          <p>הריפוי מתהווה מתוך קבלה עצמית, חום ואהבה פנימיים ל"ילד" שבתוכנו.</p>
-        </div>
-        <div class="method-card" data-animate data-delay="120">
-          <div class="method-card__num" aria-hidden="true">02</div>
-          <h3>טיפול דינאמי</h3>
-          <p>עבודה עם שכבות עמוקות של הנפש: הבנת מקורות הכאב, הדפוסים הפנימיים, ומה שמניע את ההתנהגות שלנו.</p>
-          <p>שיטה המאפשרת שינוי עמוק ומתמשך, שמחזיק לאורך זמן.</p>
-        </div>
-        <div class="method-card" data-animate data-delay="240">
-          <div class="method-card__num" aria-hidden="true">03</div>
-          <h3>כלי גוף-נפש</h3>
-          <p>שיטת <strong>המסע</strong>, <strong>התמקדות</strong>, ו<strong>נשימות מעגליות</strong>: כלים גופניים המאפשרים גמישות טיפולית.</p>
-          <p>מצליחים לקדם את התהליך במקומות הקשים ביותר, שם המילים לבדן אינן מספיקות.</p>
-        </div>
       </div>
     </div>
   </section>
