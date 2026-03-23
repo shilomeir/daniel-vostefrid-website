@@ -21,6 +21,15 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="he" dir="rtl">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;700;900&family=Heebo:wght@300;400;500;700&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="icon" href="/images/logo.png" type="image/png" />
+      </head>
       <body className="font-sans bg-bone antialiased">
         <Navbar />
         <main>{children}</main>
