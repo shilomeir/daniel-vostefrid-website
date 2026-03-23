@@ -142,7 +142,7 @@ const BODY_BEFORE_ARTICLES = `
   <nav class="navbar" id="navbar">
     <div class="navbar__inner">
       <a href="#home" class="navbar__logo">
-        <img src="images/logo.png" alt="דניאל ווסטפריד" />
+        <img src="images/logo.png" alt="דניאל וסטפריד" />
       </a>
 
       <div class="navbar__menu" id="navMenu">
@@ -182,7 +182,7 @@ const BODY_BEFORE_ARTICLES = `
         <div class="hero__badge">
           <span>10+ שנות ניסיון</span>
         </div>
-        <h1 class="hero__name">דניאל ווסטפריד</h1>
+        <h1 class="hero__name">דניאל וסטפריד</h1>
         <p class="hero__sub">
           פסיכותרפיסט ומטפל גוף-נפש<br />
           מסע לעבר הכרה, קבלה, ושלום פנימי
@@ -207,7 +207,7 @@ const BODY_BEFORE_ARTICLES = `
       <div class="hero__image-wrap" data-animate data-delay="200">
         <div class="hero__image-ring" aria-hidden="true"></div>
         <div class="hero__image">
-          <img src="images/daniel-hero.jpg" alt="דניאל ווסטפריד, פסיכותרפיסט ומטפל גוף-נפש" />
+          <img src="images/daniel-hero.jpg" alt="דניאל וסטפריד, פסיכותרפיסט ומטפל גוף-נפש" />
         </div>
       </div>
     </div>
@@ -270,24 +270,11 @@ const BODY_BEFORE_ARTICLES = `
           קבל/י מדריך חינמי עם 5 כלים מעשיים לטיפוח שלום פנימי בחיי היומיום —
           מגישת שיטת ימימה.
         </p>
-        <form class="lead-magnet__form" id="leadMagnetForm" novalidate>
-          <input
-            type="email"
-            id="leadEmail"
-            name="email"
-            placeholder="כתובת אימייל"
-            required
-            autocomplete="email"
-            class="lead-magnet__input"
-            aria-label="כתובת אימייל"
-          />
-          <button type="submit" class="btn btn--primary lead-magnet__btn">
-            שלחו לי את המדריך
-          </button>
-        </form>
-        <div class="lead-magnet__status-box" id="leadMagnetStatus" aria-live="polite">
-          ✉️ תוך דקות המדריך אצלך — רק להשאיר מייל
-        </div>
+        <a href="https://danielw.ravpage.co.il/guide.takeoff"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn--primary lead-magnet__btn lead-magnet__btn--big">
+          שלחו לי את המדריך ←
+        </a>
       </div>
     </div>
   </section>
@@ -304,15 +291,10 @@ const BODY_BEFORE_ARTICLES = `
       </div>
 
       <div class="soldiers__body">
-        <div class="soldiers__symptoms" data-animate>
-          <h3 class="soldiers__symptoms-title">מכיר את התחושות האלה?</h3>
-          <ul class="soldiers__symptoms-list">
-            <li>חזרת הביתה אבל לא מרגיש כמו הבית</li>
-            <li>פלאשבקים, קשיי שינה, ריחוק רגשי</li>
-            <li>קושי במעבר בין חיי מילואים לחיים האזרחיים</li>
-            <li>כעסים, עצבנות וחרדה שלא מרפים</li>
-          </ul>
-          <p class="soldiers__cta-text">אני רוצה להכיר אותך ולהציע לך כלים לתהליך.<br /><strong>הסדנה מכוסה ב-100% על ידי קרן הסיוע למילואים.</strong></p>
+        <div class="soldiers__poster" data-animate>
+          <img src="images/soldiers-poster.jpg"
+               alt="נתת בשביל המדינה? זה הזמן לתת לך בחזרה"
+               class="soldiers__poster-img" loading="lazy" />
         </div>
 
         <div class="soldiers__workshop" data-animate data-delay="150">
@@ -335,6 +317,10 @@ const BODY_BEFORE_ARTICLES = `
           <div class="soldiers__workshop-free">
             <strong>עלות אפקטיבית לך: ₪0</strong><br />
             קרן הסיוע למילואים מכסה את הכל — אתה לא משלם שקל מכיסך
+          </div>
+
+          <div class="soldiers__workshop-image">
+            <img src="images/yoga-mats.jpg" alt="סדנת טיפול ועיבוד" loading="lazy" />
           </div>
 
           <div class="soldiers__workshop-actions">
@@ -414,9 +400,12 @@ const BODY_BEFORE_ARTICLES = `
     <div class="about__inner">
       <div class="about__image-wrap" data-animate>
         <div class="about__image">
-          <img src="images/daniel-about.jpg" alt="דניאל ווסטפריד" />
+          <img src="images/daniel-about.jpg" alt="דניאל וסטפריד" />
         </div>
         <div class="about__image-ring" aria-hidden="true"></div>
+        <div class="about__image about__image--secondary" data-animate data-delay="100">
+          <img src="images/daniel-bench.jpg" alt="דניאל וסטפריד" loading="lazy" />
+        </div>
       </div>
 
       <div class="about__content" data-animate data-delay="150">
@@ -437,6 +426,10 @@ const BODY_BEFORE_ARTICLES = `
           <div class="credential-badge">
             <span class="credential-badge__icon" aria-hidden="true">🪖</span>
             <span>סדנאות טיפול ועיבוד מיוחדות לחיילים</span>
+          </div>
+          <div class="credential-badge">
+            <span class="credential-badge__icon" aria-hidden="true">🎓</span>
+            <span>לימודי תואר שני בעבודה סוציאלית, אוניברסיטת אריאל</span>
           </div>
         </div>
       </div>
@@ -617,7 +610,7 @@ const BODY_AFTER_ARTICLES = `
   <footer class="footer">
     <div class="footer__inner">
       <a href="#home" class="footer__logo">
-        <img src="images/logo.png" alt="דניאל ווסטפריד" />
+        <img src="images/logo.png" alt="דניאל וסטפריד" />
       </a>
       <nav class="footer__nav" aria-label="ניווט תחתון">
         <a href="#about">אודות</a>

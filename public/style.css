@@ -2134,3 +2134,53 @@ a.contact-info-item__value:hover {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   [data-animate] { opacity: 1; transform: none; }
 }
+
+/* ── Lead Magnet — big single button ──────────────── */
+.lead-magnet__btn--big {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin: 1.75rem auto 0;
+  padding: 1rem 2rem;
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+/* ── About — secondary bench photo ───────────────── */
+.about__image--secondary {
+  margin-top: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.about__image--secondary img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Soldiers — poster image (replaces symptoms) ─── */
+.soldiers__poster {
+  flex: 1;
+}
+.soldiers__poster-img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  display: block;
+}
+
+/* ── Soldiers — yoga mats workshop image ─────────── */
+.soldiers__workshop-image {
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.soldiers__workshop-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
