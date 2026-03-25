@@ -207,7 +207,7 @@ const BODY_BEFORE_ARTICLES = `
       <div class="hero__image-wrap" data-animate data-delay="200">
         <div class="hero__image-ring" aria-hidden="true"></div>
         <div class="hero__image">
-          <img src="images/daniel-hero.jpg" alt="דניאל וסטפריד, פסיכותרפיסט ומטפל גוף-נפש" />
+          <img src="images/daniel-hero.jpg" alt="דניאל וסטפריד – פסיכותרפיסט גופני, טיפול רגשי גוף-נפש" />
         </div>
       </div>
     </div>
@@ -260,7 +260,7 @@ const BODY_BEFORE_ARTICLES = `
     <div class="about__inner">
       <div class="about__image-wrap" data-animate>
         <div class="about__image">
-          <img src="images/daniel-about.jpg" alt="דניאל וסטפריד" />
+          <img src="images/daniel-about.jpg" alt="דניאל וסטפריד – פסיכותרפיסט גופני, טיפול רגשי" />
         </div>
         <div class="about__image-ring" aria-hidden="true"></div>
       </div>
@@ -394,7 +394,7 @@ const BODY_BEFORE_ARTICLES = `
           </div>
 
           <div class="soldiers__workshop-image">
-            <img src="images/yoga-mats.jpg" alt="סדנת טיפול ועיבוד" loading="lazy" />
+            <img src="images/yoga-mats.jpg" alt="סדנת טיפול רגשי ועיבוד גוף-נפש לחיילים ומילואימניקים" loading="lazy" />
           </div>
 
           <div class="soldiers__workshop-actions">
