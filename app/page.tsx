@@ -617,7 +617,7 @@ const BODY_AFTER_ARTICLES = `
         <a href="/blog">בלוג</a>
         <a href="#contact">צור קשר</a>
       </nav>
-      <p class="footer__copy">&copy; 2026 שילה מאיר | כל הזכויות שמורות</p>
+      <p class="footer__copy">&copy; 2026 שילה מאיר | רוצים גם? דברו איתי 0584890101</p>
     </div>
   </footer>
 `;
