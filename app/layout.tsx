@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://westipul.com"),
   title: "דניאל וסטפריד | פסיכותרפיסט גוף-נפש",
   description:
     "דניאל וסטפריד, פסיכותרפיסט ומטפל גוף-נפש. שיטת ימימה, טיפול דינאמי וכלי גוף-נפש. ליווי אישי וקבוצתי ברמת גן ובשומרון.",
@@ -12,10 +13,15 @@ export const metadata: Metadata = {
     "גוף נפש",
     "דניאל וסטפריד",
   ],
+  alternates: {
+    canonical: "https://westipul.com",
+  },
   openGraph: {
     title: "דניאל וסטפריד | פסיכותרפיסט גוף-נפש",
     description:
       "מפגש של האדם עם ההווה. ריפוי מתוך קבלה עצמית, חום ואהבה פנימיים.",
+    url: "https://westipul.com",
+    siteName: "דניאל וסטפריד",
     locale: "he_IL",
     type: "website",
   },
@@ -37,6 +43,8 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;700;900&family=Heebo:wght@300;400;500;700&display=swap"
           rel="stylesheet"
         />
+        {/* Google Search Console verification — replace content with your tag */}
+        {/* <meta name="google-site-verification" content="REPLACE_WITH_YOUR_CODE" /> */}
         <link rel="icon" href="/images/logo.png" type="image/png" />
         <link rel="stylesheet" href="/style.css" />
       </head>
