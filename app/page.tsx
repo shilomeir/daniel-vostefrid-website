@@ -293,11 +293,6 @@ const BODY_BEFORE_ARTICLES = `
     </div>
   </section>
 
-  <!-- PHOTO STRIP -->
-  <div class="photo-strip" data-animate>
-    <img src="images/daniel-bench.jpg" alt="דניאל וסטפריד" loading="lazy" />
-  </div>
-
   <!-- ═══════════════════════════════════════════
        METHOD
   ═══════════════════════════════════════════ -->
