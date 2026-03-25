@@ -43,8 +43,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;700;900&family=Heebo:wght@300;400;500;700&display=swap"
           rel="stylesheet"
         />
-        {/* Google Search Console verification — replace content with your tag */}
-        {/* <meta name="google-site-verification" content="REPLACE_WITH_YOUR_CODE" /> */}
+        <meta name="google-site-verification" content="2G--KPBFXzHnz-iLuue6qMHw3qnBMab62FGRVOVRp2I" />
         <link rel="icon" href="/images/logo.png" type="image/png" />
         <link rel="stylesheet" href="/style.css" />
       </head>
