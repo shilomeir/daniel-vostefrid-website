@@ -110,7 +110,13 @@ export default async function HomePage() {
 
   const articlesHTML = buildArticlesSection(articles);
 
-  const bodyHTML = BODY_BEFORE_ARTICLES + articlesHTML + BODY_AFTER_ARTICLES;
+  const articlesBanner = articles.length > 0
+    ? `<a class="hero-banner hero-banner--articles" href="#articles">
+            ✍️ מאמרים חדשים בבלוג — קרא עכשיו ←
+          </a>`
+    : "";
+
+  const bodyHTML = BODY_BEFORE_ARTICLES.replace("%%ARTICLES_BANNER%%", articlesBanner) + articlesHTML + BODY_AFTER_ARTICLES;
 
   return <div dangerouslySetInnerHTML={{ __html: bodyHTML }} />;
 }
@@ -195,9 +201,7 @@ const BODY_BEFORE_ARTICLES = `
           <a class="hero-banner hero-banner--guide" href="#lead-magnet">
             📖 מדריך חינמי: 5 כלים לשלום פנימי — קבל עכשיו ←
           </a>
-          <a class="hero-banner hero-banner--articles" href="#articles">
-            ✍️ מאמרים חדשים בבלוג — קרא עכשיו ←
-          </a>
+          %%ARTICLES_BANNER%%
         </div>
         <div class="hero__actions">
           <a class="btn btn--outline" href="#about">קרא עוד ↓</a>
