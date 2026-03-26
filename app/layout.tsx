@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://westipul.com"),
@@ -108,6 +109,7 @@ export default function RootLayout({
       <body>
         {children}
         <Script src="/script.js" strategy="afterInteractive" />
+        <Analytics />
       </body>
     </html>
   );
